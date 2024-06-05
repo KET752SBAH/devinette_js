@@ -45,7 +45,10 @@ section, #leaderboard{
 } */
 
 .accueil, #sectionLogin, #leaderboard, .devinette{
-    background: linear-gradient(90deg, #8360c3, #2ebf91);
+    /* background: linear-gradient(90deg, #8360c3, #2ebf91); */
+    background: linear-gradient(270deg, #8360c3, #2ebf91, #ff7e5f);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
     width: 300px;
     height: calc(300px + 100%) ;
     display: flex;
@@ -58,10 +61,30 @@ section, #leaderboard{
     padding-bottom: 50px;
 }
 
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 #loginForm button{
     height: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.content_login{
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -129,3 +152,9 @@ img.selected{
     list-style: none;
     font-size: 20px;
 }
+
+table{
+    text-align: center;
+    margin: 0 auto;
+}
+

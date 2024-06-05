@@ -243,8 +243,8 @@ function displayHighScores() {
     const sortedUsers = [...users].sort((a, b) => b.score - a.score);
 
     // Ajouter chaque score dans la liste
-    const tr = document.createElement('tr');
     sortedUsers.forEach(user => {
+        const tr = document.createElement('tr');
         const td = document.createElement('td');
         const td2 = document.createElement('td');
         const image = document.createElement('img');
@@ -252,13 +252,13 @@ function displayHighScores() {
         image.style.width = "50px"
 
         image.src = user.imageSrc
+        
+        td2.textContent = user.pseudo
+        td.textContent = user.score
+        
         tr.appendChild(image)
-
-        td2.innerText = user.pseudo
-        tr.appendChild(td2)
-
-        td.innerHTML = user.score
         tr.appendChild(td)
+        tr.appendChild(td2)
 
         // console.log(image);
         // scoreItem.textContent = `${user.pseudo}: ${user.score}`;
