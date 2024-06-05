@@ -1,14 +1,25 @@
 @font-face {
 	font-family: 'Roboto';
 	font-style: italic;
-	src: url('Game.otf') format('otf'),
+	src: url('Game.otf') format('opentype'),
+}
+
+@font-face {
+    font-family: 'Minecraft Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Minecraft Regular'), url('1_MinecraftRegular1.woff') format('woff');
+}
+
+*{
+    font-family: 'Minecraft Regular';
 }
 
 body{
     /* background-color: #13eb74; */
     background-image: url("images/8817533.jpg") ;
     background-size: cover;
-    font-family: Roboto;
+    font-family: 'Roboto';
     text-align: center;
 }
 
