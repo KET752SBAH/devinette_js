@@ -20,6 +20,9 @@ const loginPseudo = document.getElementById('loginPseudo');
 
 let currentUser = null;
 
+const messageErreur = ['Tu sais pas jouer ou quoi????', 'Ohh merde  comme tu es nulllll', 'Un conseil arrête de jouer ']
+const messageSuccess = ['Félicitation un bon joueur', 'Ohhh Excellente tu est le meilleur', 'Waouh comme vous êtes biens']
+
 const words = [
                 "javascript", 
                 "ordinateur", 
@@ -182,7 +185,7 @@ function makeGuess() {
     if (userGuess === secretWord) {
         successStreak++;
         failStreak = 0;
-        messageElement.textContent = "Félicitations ! Vous avez deviné le mot.";
+        messageElement.textContent = messageSuccess[Math.floor(Math.random()*messageSuccess.length)]
 
 
         // score += calculateScore(attempts);
@@ -214,8 +217,9 @@ function makeGuess() {
 
         updateScore();
         saveScore(score);
-        setTimeout(initializeGame, 1000)
-        messageElement.textContent = "Mauvaise réponse, un nouveau mot a été généré.";
+        setTimeout(initializeGame, 2000)
+        message.style.color = 'red';
+        messageElement.textContent = messageErreur[Math.floor(Math.random()*messageErreur.length)]
     }
 
     document.getElementById('guessInput').value = ''; // Réinitialiser le champ de saisie

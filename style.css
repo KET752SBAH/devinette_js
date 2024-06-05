@@ -57,8 +57,9 @@ section, #leaderboard{
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    margin-top: 80px;
+    margin-top: 60px;
     padding-bottom: 50px;
+
 }
 
 
@@ -88,15 +89,12 @@ section, #leaderboard{
 }
 
 
-.accueil button{
+/* .accueil button{
     height: 30px;
     margin-top: 10px;
-}
+} */
 
-.accueil button:hover{
-    background-color: #d1c7c7;
-    border-radius: 2px;
-}
+
 
 #sectionLogin{
     /* background-color: ; */
@@ -173,6 +171,20 @@ input{
     border-radius: 5px;
 }
 
+button{
+    background-color: #79dada;
+    color: black;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    /* background-color: #79dada; */
+    background-color: #ff7e5f;
+}
+
 table{
     text-align: center;
     margin: 0 auto;
@@ -187,4 +199,18 @@ thead tr th{
 .p_head{
     display: flex;
     justify-content: space-around;
+}
+
+#score, #essai_p{
+    padding: 5px;
+    background-color: #79dada;
+    height: 20px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+}
+
+#score:hover, #essai_p:hover{
+    background-color: #68bebe;
 }
