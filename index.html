@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeu de Devinette de Mot</title>
+</head>
+
+<body>
+
+    <div class="container_all">
+        <section class="accueil" data-aos="zoom-out">
+            <div class="accueil">
+                <button onclick="btnLoginA()">Connexion</button><br>
+                <button onclick="btnCreateA()">Créer Compte</button><br>
+                <button onclick="displayHighScores()">Classement</button>
+            </div>    
+        </section>
+    
+        <section id="sectionLogin" data-aos="zoom-in">
+            <div  >
+                <h2>Jeux de Devinette</h2>
+                <form id="loginForm">
+                    <input type="text" id="loginPseudo" placeholder="Pseudo Joueur" required><br>
+                    <button type="submit" >Jouer</button>
+                </form>
+                <button onclick="btnCreateA()">Créer un compte</button>
+            </div>
+        </section>
+    
+        <section class="createUser"  data-aos="zoom-out">
+            <h3>Créer un Joueur</h3>
+            <input type="text" name="pseudo" id="pseudo" placeholder="nom du joueur">
+            <label for="">Selectionner un profile par default</label>
+            <div class="profileDiv">
+                <img src="images/boy.png" class="profile" alt="" >
+                <img src="images/boy2.png" class="profile selected" alt="" >
+                <img src="images/man.png" class="profile" alt="" >
+                <img src="images/man2.png" class="profile" alt="" >
+                <img src="images/rabbit.png" class="profile" alt="" >
+                <img src="images/woman.png" class="profile " alt="" >
+            </div>
+    
+            <button class="createValider" >Valider</button>
+        </section>
+    
+    
+        <section class="devinette">
+            <h1>Jeu de Devinette</h1>
+            <div class="imageDiv">
+            </div>
+            <h2 class="pseudoName">Incon</h2>
+            <p>Devinez le mot secret !</p>
+            <p id="hiddenWord"></p>
+            <input type="text" id="guessInput" placeholder="Entrez votre devinette">
+            <button onclick="makeGuess()">Deviner</button>
+            <p id="message"></p>
+            <p id="score">Score : <span id="scoreValue">0</span></p>
+        </section>
+    
+        <section id="leaderboard">
+            <div class="">
+                <h1>Classement</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Profile</th>
+                            <th>Pseudo</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-list">
+                    </tbody>
+                </table>
+                
+            </div>
+        </section>
+    
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

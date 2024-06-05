@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "json",
+			"path": "."
+		},
+		{
+			"name": "game_font",
+			"path": "../../../../../../Downloads/game_font"
+		}
+	],
+	"settings": {}
+}
