@@ -177,21 +177,29 @@ function makeGuess() {
 
     // attempts++;
 
+    let essai = document.getElementById("essaiValue")
+
     if (userGuess === secretWord) {
         successStreak++;
         failStreak = 0;
         messageElement.textContent = "Félicitations ! Vous avez deviné le mot.";
 
+
         // score += calculateScore(attempts);
         if (successStreak % 5 === 0) {
             score += (successStreak / 5) * 10;
         } 
-        score +=1; 
+        score++; 
         updateScore();
         document.getElementById('guessInput').disabled = true; // Désactiver l'entrée après la bonne réponse
         saveScore(score); 
         setTimeout(initializeGame, 1000); // Réinitialiser le jeu après 1 secondes
     } else {
+
+        // let compteur = 0
+        essai.innerText = essai.innerText -failStreak 
+
+        console.log(essai);
 
         failStreak++;
         successStreak = 0;

@@ -49,7 +49,7 @@ section, #leaderboard{
     background: linear-gradient(270deg, #8360c3, #2ebf91, #ff7e5f);
     background-size: 600% 600%;
     animation: gradientAnimation 10s ease infinite;
-    width: 300px;
+    width: 350px;
     height: calc(300px + 100%) ;
     display: flex;
     flex-direction: column;
@@ -119,6 +119,11 @@ section, #leaderboard{
     display: none;
 }
 
+.createUser{
+    margin-top: 50px;
+}
+
+
 @media (max-width: 200px){
     .profile{
         grid-template-columns: 1fr;
@@ -142,6 +147,15 @@ img.selected{
 
 .createValider{
     margin-top: 20px;
+    background-color: #8360c3;
+    height: 30px;
+    width: 80px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.createValider:hover{
+    background-color: #2ebf91;
 }
 
 .imageDiv img{
@@ -153,8 +167,24 @@ img.selected{
     font-size: 20px;
 }
 
+input{
+    height: 20px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
 table{
     text-align: center;
     margin: 0 auto;
+    color: black;
 }
 
+thead tr th{
+    text-transform: uppercase;
+    padding: 0 18px;
+}
+
+.p_head{
+    display: flex;
+    justify-content: space-around;
+}
