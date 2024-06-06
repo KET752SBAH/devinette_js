@@ -24,15 +24,15 @@ const messageErreur = ['Tu sais pas jouer ou quoi????', 'Ohh merde  comme tu es 
 const messageSuccess = ['Félicitation un bon joueur', 'Ohhh Excellente tu est le meilleur', 'Waouh comme vous êtes biens']
 
 const words = [
-                "javascript", 
-                "ordinateur", 
-                "programmation", 
-                "developpeur", 
-                "internet",
-                "telephone",
-                "angular",
-                "django"
-            ];
+    "javascript",
+    "ordinateur",
+    "programmation",
+    "developpeur",
+    "internet",
+    "telephone",
+    "angular",
+    "django"
+];
 let secretWord;
 let hiddenWordArray;
 // let attempts = 0;
@@ -83,11 +83,12 @@ loginForm.addEventListener('submit', function (event) {
     sectionLogin.style.display = 'none';
     sectionCreateUser.style.display = 'none'
     Sectionleaderboard.style.display = 'none'
-    
+
     currentUser = users.find(user => user.pseudo === pseudo);
     if (currentUser) {
         SectionDevinette.style.display = "block"
         // sectionUpdateUser.style.display = '';
+
         image.src = currentUser.imageSrc;
         console.log(image);
         imageDiv.appendChild(image)
@@ -191,22 +192,22 @@ function makeGuess() {
     if (userGuess === secretWord) {
         successStreak++;
         failStreak = 0;
-        messageElement.textContent = messageSuccess[Math.floor(Math.random()*messageSuccess.length)]
+        messageElement.textContent = messageSuccess[Math.floor(Math.random() * messageSuccess.length)]
 
 
         // score += calculateScore(attempts);
         if (successStreak % 5 === 0) {
             score += (successStreak / 5) * 10;
-        } 
-        score++; 
+        }
+        score++;
         updateScore();
         document.getElementById('guessInput').disabled = true; // Désactiver l'entrée après la bonne réponse
-        saveScore(score); 
+        saveScore(score);
         setTimeout(initializeGame, 1000); // Réinitialiser le jeu après 1 secondes
     } else {
 
         // let compteur = 0
-        essai.innerText = essai.innerText -failStreak 
+        essai.innerText = essai.innerText - failStreak
 
         console.log(essai);
 
@@ -225,7 +226,7 @@ function makeGuess() {
         saveScore(score);
         setTimeout(initializeGame, 2000)
         message.style.color = 'red';
-        messageElement.textContent = messageErreur[Math.floor(Math.random()*messageErreur.length)]
+        messageElement.textContent = messageErreur[Math.floor(Math.random() * messageErreur.length)]
     }
 
     document.getElementById('guessInput').value = ''; // Réinitialiser le champ de saisie
@@ -252,9 +253,10 @@ if (localStorage.getItem('score')) {
 Sectionleaderboard.style.display = "none";
 
 function displayHighScores() {
-    accueil.style.display = "none"
+    // accueil.style.display = "none"
     sectionCreateUser.style.display = "none"
     sectionLogin.style.display = "none"
+    SectionDevinette.style.display = "none"
     Sectionleaderboard.style.display = "block";
     const scoreList = document.getElementById('score-list');
     scoreList.innerHTML = ''; // Vider la liste actuelle
@@ -272,10 +274,10 @@ function displayHighScores() {
         image.style.width = "50px"
 
         image.src = user.imageSrc
-        
+
         td2.textContent = user.pseudo
         td.textContent = user.score
-        
+
         tr.appendChild(image)
         tr.appendChild(td)
         tr.appendChild(td2)
@@ -285,6 +287,14 @@ function displayHighScores() {
         scoreList.appendChild(tr);
     });
 }
+
+const refreshButton = document.getElementById('refreshButton');
+
+// Ajout d'un événement de clic au bouton
+refreshButton.addEventListener('click', () => {
+    // Recharge la page actuelle
+    window.location.reload();
+});
 
 
 // Initialiser le jeu au chargement de la page
