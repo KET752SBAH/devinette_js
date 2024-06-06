@@ -80,10 +80,13 @@ loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const pseudo = loginPseudo.value.trim();
 
+    sectionLogin.style.display = 'none';
+    sectionCreateUser.style.display = 'none'
+    Sectionleaderboard.style.display = 'none'
+    
     currentUser = users.find(user => user.pseudo === pseudo);
     if (currentUser) {
         SectionDevinette.style.display = "block"
-        sectionLogin.style.display = 'none';
         // sectionUpdateUser.style.display = '';
         image.src = currentUser.imageSrc;
         console.log(image);
@@ -149,11 +152,14 @@ btnCreateValider.addEventListener('click', () => {
 function btnLoginA() {
     accueil.style.display = "none";
     sectionLogin.style.display = "block"
+    Sectionleaderboard.style.display = "none";
 }
 
 function btnCreateA() {
     accueil.style.display = "none";
     sectionLogin.style.display = "none"
+    Sectionleaderboard.style.display = "none";
+
     sectionCreateUser.style.display = "flex"
 }
 
@@ -247,6 +253,8 @@ Sectionleaderboard.style.display = "none";
 
 function displayHighScores() {
     accueil.style.display = "none"
+    sectionCreateUser.style.display = "none"
+    sectionLogin.style.display = "none"
     Sectionleaderboard.style.display = "block";
     const scoreList = document.getElementById('score-list');
     scoreList.innerHTML = ''; // Vider la liste actuelle

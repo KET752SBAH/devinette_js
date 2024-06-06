@@ -27,6 +27,7 @@
                     <button type="submit" >Jouer</button>
                 </form>
                 <button onclick="btnCreateA()">Créer un compte</button>
+                <button onclick="displayHighScores()">Classement</button>
             </div>
         </section>
     
@@ -43,7 +44,8 @@
                 <img src="images/woman.png" class="profile " alt="" >
             </div>
     
-            <button class="createValider" >Valider</button>
+            <button class="createValider" >Valider</button><br>
+            <button onclick="displayHighScores()">Classement</button>
         </section>
     
     
@@ -65,6 +67,10 @@
             <input type="text" id="guessInput" placeholder="Entrez votre devinette">
             <button onclick="makeGuess()">Deviner</button>
             <p id="message"></p>
+
+            <hr style="margin-bottom: 20px;">
+            <button onclick="btnCreateA()">Créer Compte</button>
+            <button onclick="displayHighScores()">Classement</button> 
         </section>
     
         <section id="leaderboard">
@@ -83,6 +89,9 @@
                 </table>
                 
             </div>
+            <hr style="margin-bottom: 20px;">
+            <button onclick="btnLoginA()">Connexion</button>
+            <button onclick="btnCreateA()">Créer Compte</button>
         </section>
     
     </div>

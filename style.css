@@ -25,8 +25,9 @@ body{
 
 .container_all{
     display: flex;
-
+    flex-direction: column;
 }
+
 
 section, #leaderboard{
     display: flex;
@@ -125,6 +126,10 @@ section, #leaderboard{
 @media (max-width: 200px){
     .profile{
         grid-template-columns: 1fr;
+    }
+    .container_all{
+        display: flex;
+        flex-direction: column;
     }
 }
 
